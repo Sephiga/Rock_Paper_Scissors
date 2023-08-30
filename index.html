@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/script.js"></script>
+    <title>Rock, Paper, Scissors!</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    
+        <header class="topheader">
+            <div>
+                <input type="text" id="filter" placeholder="Search..." style="width: 400px; height: 26px;">
+            </div>
+        </header>
+        </div>
+        <div class="midcontainer">
+            <div class="midchildcontainer">
+                <h1>Test Your Might! 💪</h1>
+            </div>
+            <div class="midchildcontainer2">
+                <span class="magictext">Magic</span>&nbspbeats&nbsp<span class="meleetext">Melee</span>,
+                <span class="meleetext">Melee</span>&nbspbeats&nbsp<span class="rangedtext">Ranged</span>,
+                And&nbsp<span class="rangedtext">Ranged</span>&nbspbeats&nbsp<span class="magictext">Magic</span>.
+            </div>
+            <span class="midchildcontainer2">Defeat the enemy!!</span>
+            <div class="buttoncontainer">
+                <img src="./img/wand.png">
+                <button class="buttons magictext">Magic</button>
+                <img src="./img/—Pngtree—beautiful purple long sword illustration_4549296.png">
+                <button class="buttons meleetext">Melee</button>
+                <img src="./img/pngegg.png">
+                <button class="buttons rangedtext">Ranged</button>
+            </div>
+        </div>
+        <span class="scores">
+            <span style="background-color: wheat; border: 2px solid rgb(0, 0, 0, .0); border-radius: 13px;">Player Score:  </span>
+            <br>
+            <br>
+            <br>
+            <span style="color: orangered"><u>Enemy Score:</u></span>
+        </span>    
+        <div class="bottom">
+            <form id="addForm">
+                <h3>What game should I make next?
+                    <input id="item" type="text" placeholder="Make a suggestion :)" style="width: 400px; height: 30px;">
+                    <input type="submit" value="submit" style="font-size: 22px;  width: 100px; height: 30px;">
+                </h3>
+                <ul id="items" class="list-group">
+                
+                </ul>
+            </form>
+        </div>
+        <script src="/script.js"></script> 
+        <script src="/game-script.js"></script>
 </body>
 </html>

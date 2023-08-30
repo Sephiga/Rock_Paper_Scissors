@@ -1,0 +1,117 @@
+body{
+    min-height: 100vh;
+    background-color: blanchedalmond;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction:column;
+}
+
+
+img{
+    
+    width: 100px;
+    height:100px;
+    
+}
+
+.topheader{
+    background-color: mediumaquamarine;
+    border: solid 10px mediumaquamarine;
+    font-size: 30px;
+    padding: 16px;
+    
+}
+
+.bottom{
+    margin-top:auto;
+    background-color: mediumaquamarine;
+    
+  }
+
+  
+
+.midcontainer{
+    
+    width: 50%;
+    margin: auto;
+    font-size: 40px;
+    
+    
+}
+
+.midchildcontainer{
+    background-color: wheat;
+    border-style:double;
+    border-color: solid black;
+    border-width: 20px;
+    border-radius: 18px;
+    text-align: center;
+    
+    
+}
+.midchildcontainer2{
+    
+    margin: 20px;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+
+    
+}
+
+.magictext{
+    color: lightskyblue;
+    text-shadow: 1px 1px 1px blue;
+    border: solid 2px rgb(0, 0, 255, .1);
+    background-color: azure;
+    border-radius: 4px;
+}
+
+.meleetext{
+    color:lightcoral;
+    text-shadow: 1px 1px 1px crimson;
+    border: solid 2px rgb(255, 0, 0, .1);
+    background-color: rgb(255, 236, 241);
+    border-radius: 4px;
+}
+
+.rangedtext{
+    color:lightgreen;
+    text-shadow: 1px 1px 1px green;
+    border: solid 2px rgb(1, 60, 1, .1);
+    background-color: mintcream;
+    border-radius: 4px;
+    
+}
+
+.buttoncontainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height:26px;
+    margin-top:30px;
+}
+
+.buttons{
+    font-size: 30px;
+    font-weight: bold;
+    width: 162px;
+    height: 100px;
+    border-radius: 12px;
+    box-shadow: 5px 10px;
+    
+    
+}
+
+.scores{
+    box-sizing: border-box;
+    font-weight: bolder;
+    font-size: 38px;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+
+
+

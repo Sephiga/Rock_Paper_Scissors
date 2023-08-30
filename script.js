@@ -1,84 +1,59 @@
-//randomly chooses Rock, Paper, or Scissors
-let choices = [ "Rock", "Paper", "Scissors"];
+let form = document.getElementById('addForm');
+let itemList = document.getElementById('items');
+let filter = document.getElementById('filter');
 
+// Form submit event
+form.addEventListener('submit', addItem);
+// delete event
+itemList.addEventListener('click', removeItem);
+//Filter event
+filter.addEventListener('keyup', filterItems);
+//Add Item
+function addItem(e){
+    e.preventDefault();
+let newItem = document.getElementById('item').value;
+// Create new li element
+let li = document.createElement('li');
+//add class
+li.className = 'list-group-item';
+// add text node with input value
+li.appendChild(document.createTextNode(newItem));
+//create delete button element
+let deleteButton = document.createElement('button');
+//add delete class to deleteButton
+deleteButton.className = 'delete';
+//append text node
+deleteButton.appendChild(document.createTextNode(' X'));
+//append button to li
 
-
-function getComputerChoice(){
-    return choices[Math.floor(Math.random() * choices.length)];
+li.appendChild(deleteButton);
+//append li to list
+itemList.appendChild(li);
 }
 
-
-
-//playing rock, paper, scissors and keeping score
-
-function game(){ 
-    //play single round of Rock, Paper, Scissors
-    function playRound(playerSelection, computerSelection){
-        if (playerSelection === "rock"  && computerSelection === "Paper"){
-            return "You lose! Paper beats Rock.";
-        }
-        else if (playerSelection === "rock" && computerSelection === "Scissors"){
-            return "You win! Rock beats Scissors";
-        }
-        else if (playerSelection === "paper"  && computerSelection === "Scissors"){
-            return "You lose! Scissors beats paper.";
-        }
-        else if (playerSelection === "paper"  && computerSelection === "Rock"){
-            return "You win! Paper beats rock.";
-        }
-        else if (playerSelection === "scissors"  && computerSelection === "Rock"){
-            return "You lose! Rock beats scissors.";
-        }  
-        else if (playerSelection === "scissors" && computerSelection === "Paper"){
-            return "You win! Scissors beats paper!";
-        }
-        else {
-            return "Tie! Go again.";
-        }
-
-    }
-    //keep track of player and computer score
-    function keepScore(computerScore, playerScore){
-        if ("You lose! Paper beats Rock."){
-            computerScore + 1;
-        }
-        else if ("You win! Rock beats Scissors"){
-            playerScore + 1;
-        }
-        else if ("You lose! Scissors beats paper."){
-            computerScore + 1;
-        }
-        else if ("You win! Paper beats rock."){
-            playerScore + 1;
-        }
-        else if ("You lose! Rock beats scissors."){
-            computerScore + 1;
-        }
-        else if ("You win! Scissors beats paper!"){
-            playerScore + 1;
-        }
-        else {
-            return 0;
+function removeItem(e){
+    if(e.target.classList.contains('delete')){
+        if(confirm('Are you sure you want to DELETE?')){
+            let li = e.target.parentElement;
+            itemList.removeChild(li);
         }
     }
-    //determine winner
-    function theWinner(){
-        if (playerScore === 5){
-            return "You are the winner!";
-        }
-        else if (computerScore === 5){
-            return "You lost to the computer! Try again.";
-        }
-        else {
-            return;
-        }
-    }
-    let computerScore = 0;
-    let playerScore = 0;
-    const playerSelection = window.prompt("Choose your weapon!");
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection.toLowerCase(), computerSelection));
-    console.log(keepScore(playerScore, computerScore));
-    console.log(theWinner());
 }
-console.log(game());
+
+//filter items
+function filterItems(e){
+    //convert all text to lowercase
+    let text = e.target.value.toLowerCase();
+    //get list
+    let items = itemList.getElementsByTagName('li');
+    //convert to an array
+    Array.from(items).forEach(function(item){
+        let itemName = item.firstChild.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.style.display = 'block';
+        }
+        else{
+            item.style.display = 'none';
+        }
+    })
+}
