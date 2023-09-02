@@ -24,22 +24,23 @@
                 And&nbsp<span class="rangedtext">Ranged</span>&nbspbeats&nbsp<span class="magictext">Magic</span>.
             </div>
             <span class="midchildcontainer2">Defeat the enemy!!</span>
+            <br>
+            <span id="battleEnemy" type='text' class="midchildcontainer2"></span>
             <div class="buttoncontainer">
                 <img src="./img/wand.png">
-                <button class="buttons magictext">Magic</button>
+                <button id="magicbtn" class="buttons magictext">Magic</button>
                 <img src="./img/—Pngtree—beautiful purple long sword illustration_4549296.png">
-                <button class="buttons meleetext">Melee</button>
+                <button id="meleebtn" class="buttons meleetext">Melee</button>
                 <img src="./img/pngegg.png">
-                <button class="buttons rangedtext">Ranged</button>
+                <button id="rangedbtn" class="buttons rangedtext">Ranged</button>
             </div>
         </div>
-        <span class="scores">
-            <span style="background-color: wheat; border: 2px solid rgb(0, 0, 0, .0); border-radius: 13px;">Player Score:  </span>
+        <div class="scores">
+            <span id='player1' style="background-color: wheat; border: 2px solid rgb(0, 0, 0, .0); border-radius: 13px;">Player Score:</span><span id="playerUpdate"></span>
             <br>
             <br>
-            <br>
-            <span style="color: orangered"><u>Enemy Score:</u></span>
-        </span>    
+            <span id='player2' style="color: orangered"><u>Enemy Score:</u></span>
+        </div>    
         <div class="bottom">
             <form id="addForm">
                 <h3>What game should I make next?

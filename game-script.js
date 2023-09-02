@@ -1,78 +1,153 @@
-//randomly chooses Rock, Paper, or Scissors
-let choices = [ "Magic", "Melee", "Ranged"];
-function getComputerChoice(){
-    return choices[Math.floor(Math.random() * choices.length)];
+
+//assigning button choices
+let magicChoice = document.getElementById("magicbtn");
+let meleeChoice = document.getElementById("meleebtn");
+let rangedChoice = document.getElementById("rangedbtn");
+
+//button choice events
+magicChoice.addEventListener('click', chooseMagic);
+meleeChoice.addEventListener('click', chooseMelee);
+rangedChoice.addEventListener('click', chooseRanged);
+
+//choose Magic button
+function chooseMagic(){
+    playRound('magic', getComputerChoice());
 }
+
+// choose Melee Button
+function chooseMelee(){
+    playRound('melee', getComputerChoice());
+}
+
+// choose ranged Button
+function chooseRanged(){
+    playRound('ranged', getComputerChoice());
+}
+
+
+
+
+//computer randomly chooses Rock, Paper, or Scissors
+let cpuChoices = [ "magic", "melee", "ranged"];
+
+function getComputerChoice(){
+    return cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
+}
+
 
 //playing rock, paper, scissors 
 let computerScore = 0;
 let playerScore = 0;
-let playerSelection;
-let computerSelection;
+
 
 function playRound(playerSelection, computerSelection){
-    
-    if (playerSelection === "magic"  && computerSelection === "Melee"){
+    if (playerSelection === "magic"  && computerSelection === "melee"){
         playerScore++;
-        return "You fried them! Magic beats Melee.";
+        document.getElementById('player1').textContent = "Player Score: " + playerScore;
+        document.getElementById('battleEnemy').textContent = "You fried them! Magic beats Melee.";
     }
-    if (playerSelection === "magic"  && computerSelection === "Ranged"){
+    if (playerSelection === "magic"  && computerSelection === "ranged"){
         computerScore++;
-        return "You are riddled with holes! Ranged Beats Magic.";
+        document.getElementById('player2').textContent = "Computer Score: " + computerScore;
+        document.getElementById('battleEnemy').textContent = "You are riddled with holes! Ranged Beats Magic.";
     }
-    if (playerSelection === "melee" && computerSelection === "Ranged"){
+    if (playerSelection === "melee" && computerSelection === "ranged"){
         playerScore++;
-        return "You cleaved through! Melee beats Ranged.";
+        document.getElementById('player1').textContent = "Player Score: " + playerScore;
+        document.getElementById('battleEnemy').textContent = "You cleaved through! Melee beats Ranged.";
     }
-    if (playerSelection === "melee"  && computerSelection === "Magic"){
+    if (playerSelection === "melee"  && computerSelection === "magic"){
         computerScore++;
-        return  "You were vaporized! Magic beats Melee.";
+        document.getElementById('player2').textContent = "Computer Score: " + computerScore;
+        document.getElementById('battleEnemy').textContent = "You were vaporized! Magic beats Melee.";
     }
-    if (playerSelection === "ranged"  && computerSelection === "Magic"){
+    if (playerSelection === "ranged"  && computerSelection === "magic"){
         playerScore++;
-        return  "You made them swiss cheese! Ranged beats Magic";
+        document.getElementById('player1').textContent = "Player Score: " + playerScore;
+        document.getElementById('battleEnemy').textContent = "You made them swiss cheese! Ranged beats Magic";
     }  
-    if (playerSelection === "ranged" && computerSelection === "Melee"){
+    if (playerSelection === "ranged" && computerSelection === "melee"){
         computerScore++;
-        return  "They were too strong! Melee beats Ranged.";
+        document.getElementById('player2').textContent = "Computer Score: " + computerScore;
+        document.getElementById('battleEnemy').textContent = "They were too strong! Melee beats Ranged.";
     }
-    else {
-        return "Tie! Go again.";
+    if (playerSelection === computerSelection){
+        document.getElementById('battleEnemy').textContent = "You clashed in a tie! Try again.";
     }
+
+
+
 }
 
+//five rounds
 
 
 
-//keep score after playing rock paper scissors & play until 5 wins/losses.
-function game(){ 
-    if (playerScore === 5){
-        alert("You won!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
-        /*if (confirm("Play again?") == true){
-            console.log(game());
+    if(playerScore === 5){
+        
+            document.getElementsByClassName('player1').textContent = "You scored 5 points and defeated the enemy!";
+            document.getElementsByClassName('player2').textContent = " ";
+        
+    }
+
+    if(computerScore === 5){
+        function cpuWinner(){
+            document.getElementsByClassName('player1').textContent = "The enemy has scored 5 points and overwhelmed you...";
+            document.getElementsByClassName('player2').textContent = " ";
         }
-        if (confirm("Play again?") == false){
-            alert("Rest now. You've saved us.");
-        }
-        */
-        }
-    else if (computerScore === 5){
-        alert("You lose!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
-        /*if (confirm("Try again?") == true){
-            console.log(game());
-        }
-        if (confirm("Try again?") === false) {
-            alert("Th e robots are taking over!");
+    }
+
+
+//update scores
+
+document.getElementById('player1').textContent = "Player Score: " + playerScore;
+document.getElementById('player2').textContent = "Computer Score: " + computerScore;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//old logic that plays exactly five rounds
+
+    // keep score after playing rock paper scissors & play until 5 wins/losses.
+    // function game(){ 
+    //     if (playerScore === 5){
+    //         alert("You won!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
+    //         if (confirm("Play again?") == true){
+    //             console.log(game());
+    //         }
+    //         if (confirm("Play again?") == false){
+    //             alert("Rest now. You've saved us.");
+    //         }
             
-        }
-        */
-        }  
-const playerSelection = document.getElementsByClassName('buttons').addEventListener('onclick', selectChoice);
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection.toLowerCase(), computerSelection));
-console.log('Player:' + playerScore + '   ' + 'Computer:' + computerScore);
-return game();
-}
+    //         }
+    //     else if (computerScore === 5){
+    //         alert("You lose!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
+    //         if (confirm("Try again?") == true){
+    //             console.log(game());
+    //         }
+    //         if (confirm("Try again?") === false) {
+    //             alert("Th e robots are taking over!");
+                
+    //         }
+            
+    //         }  
+    // const playerSelection;
+    // 
+    // console.log(playRound(playerSelection.toLowerCase(), computerSelection));
+    // 
+    // return game();
+    // }
 
 
 

@@ -8,6 +8,8 @@ form.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 //Filter event
 filter.addEventListener('keyup', filterItems);
+
+
 //Add Item
 function addItem(e){
     e.preventDefault();
@@ -29,7 +31,9 @@ deleteButton.appendChild(document.createTextNode(' X'));
 li.appendChild(deleteButton);
 //append li to list
 itemList.appendChild(li);
-}
+} 
+
+
 
 function removeItem(e){
     if(e.target.classList.contains('delete')){
@@ -39,6 +43,8 @@ function removeItem(e){
         }
     }
 }
+
+
 
 //filter items
 function filterItems(e){
