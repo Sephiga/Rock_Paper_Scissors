@@ -75,36 +75,60 @@ function playRound(playerSelection, computerSelection){
         document.getElementById('battleEnemy').textContent = "You clashed in a tie! Try again.";
     }
 
-
+    return game();
 
 }
 
 //five rounds
+function game(){
 
+    if (playerScore === 5){
 
-
-    if(playerScore === 5){
-        
-            document.getElementsByClassName('player1').textContent = "You scored 5 points and defeated the enemy!";
-            document.getElementsByClassName('player2').textContent = " ";
+        document.getElementById('player1').textContent = "You scored 5 points and defeated the enemy! Great Job!!";
+        document.getElementById('player2').textContent = " ";
+        document.getElementById("magicbtn").disabled = true;
+        document.getElementById("meleebtn").disabled = true;
+        document.getElementById("rangedbtn").disabled = true;
+        setTimeout(function(){
+            location.reload();
+        }, 7000);
         
     }
+    if (computerScore === 5){
 
-    if(computerScore === 5){
-        function cpuWinner(){
-            document.getElementsByClassName('player1').textContent = "The enemy has scored 5 points and overwhelmed you...";
-            document.getElementsByClassName('player2').textContent = " ";
-        }
+        document.getElementById('player1').textContent = "The enemy has scored 5 points and overwhelmed you...Try again!";
+        document.getElementById('player2').textContent = " ";
+        document.getElementById("magicbtn").disabled = true;
+        document.getElementById("meleebtn").disabled = true;
+        document.getElementById("rangedbtn").disabled = true;
+        setTimeout(function(){
+            location.reload();
+        }, 7000);
+
     }
 
-
-//update scores
+}
 
 document.getElementById('player1').textContent = "Player Score: " + playerScore;
 document.getElementById('player2').textContent = "Computer Score: " + computerScore;
 
 
+//switch
+    // switch(playerScore){
+    //     case 5: 
+    //         document.getElementsByClassName('player1').textContent = "You scored 5 points and defeated the enemy!";
+    //         document.getElementsByClassName('player2').textContent = " ";
+    //     break
+    // }
+    // switch(computerScore){
+    //     case 5:
+    //         document.getElementsByClassName('player1').textContent = "The enemy has scored 5 points and overwhelmed you...";
+    //         document.getElementsByClassName('player2').textContent = " ";
+    //     break
+    // }
 
+
+//update scores
 
 
 
