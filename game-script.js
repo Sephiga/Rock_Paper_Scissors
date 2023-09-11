@@ -113,22 +113,6 @@ document.getElementById('player1').textContent = "Player Score: " + playerScore;
 document.getElementById('player2').textContent = "Computer Score: " + computerScore;
 
 
-//switch
-    // switch(playerScore){
-    //     case 5: 
-    //         document.getElementsByClassName('player1').textContent = "You scored 5 points and defeated the enemy!";
-    //         document.getElementsByClassName('player2').textContent = " ";
-    //     break
-    // }
-    // switch(computerScore){
-    //     case 5:
-    //         document.getElementsByClassName('player1').textContent = "The enemy has scored 5 points and overwhelmed you...";
-    //         document.getElementsByClassName('player2').textContent = " ";
-    //     break
-    // }
-
-
-//update scores
 
 
 
@@ -137,41 +121,6 @@ document.getElementById('player2').textContent = "Computer Score: " + computerSc
 
 
 
-
-
-
-
-//old logic that plays exactly five rounds
-
-    // keep score after playing rock paper scissors & play until 5 wins/losses.
-    // function game(){ 
-    //     if (playerScore === 5){
-    //         alert("You won!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
-    //         if (confirm("Play again?") == true){
-    //             console.log(game());
-    //         }
-    //         if (confirm("Play again?") == false){
-    //             alert("Rest now. You've saved us.");
-    //         }
-            
-    //         }
-    //     else if (computerScore === 5){
-    //         alert("You lose!" + "     " + "Player:" + " "+ playerScore + "     " + "Computer:" + " " + computerScore);
-    //         if (confirm("Try again?") == true){
-    //             console.log(game());
-    //         }
-    //         if (confirm("Try again?") === false) {
-    //             alert("Th e robots are taking over!");
-                
-    //         }
-            
-    //         }  
-    // const playerSelection;
-    // 
-    // console.log(playRound(playerSelection.toLowerCase(), computerSelection));
-    // 
-    // return game();
-    // }
 
 
 
