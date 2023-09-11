@@ -1,3 +1,6 @@
+//code from YouTube to learn how to make a submit form and search bar
+
+
 let form = document.getElementById('addForm');
 let itemList = document.getElementById('items');
 let filter = document.getElementById('filter');
