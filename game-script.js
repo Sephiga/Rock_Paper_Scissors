@@ -86,6 +86,7 @@ function game(){
 
         document.getElementById('player1').textContent = "You scored 5 points and defeated the enemy! Great Job!!";
         document.getElementById('player2').textContent = " ";
+        document.getElementById('refresh').textContent = "Page will refresh in 7 seconds..."
         document.getElementById("magicbtn").disabled = true;
         document.getElementById("meleebtn").disabled = true;
         document.getElementById("rangedbtn").disabled = true;
@@ -98,6 +99,7 @@ function game(){
 
         document.getElementById('player1').textContent = "The enemy has scored 5 points and overwhelmed you...Try again!";
         document.getElementById('player2').textContent = " ";
+        document.getElementById('refresh').textContent = "Page will refresh in 7 seconds..."
         document.getElementById("magicbtn").disabled = true;
         document.getElementById("meleebtn").disabled = true;
         document.getElementById("rangedbtn").disabled = true;
